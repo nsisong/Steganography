@@ -1,7 +1,7 @@
-
 import cv2
 import string
 import os
+import numpy as np
 d={}
 c={}
 
@@ -11,11 +11,11 @@ for i in range(255):
   
   
 #print(c)
+x = cv2.imread('John_D_Ballard_House.jpg')
 
-x=cv2.imread("1.jpg")
-
-i=x.shape[0]
-j=x.shape[1]
+# print(x)
+i = x.shape[0]
+j = x.shape[1]
 print(i,j)
 
 key=input("Enter key to edit(Security Key) : ")
@@ -38,7 +38,7 @@ for i in range(l):
     kl=(kl+1)%len(key)
     
 cv2.imwrite("encrypted_img.jpg",x) 
-os.startfile("encrypted_img.jpg")
+os.system("open encrypted_img.jpg")
 print("Data Hiding in Image completed successfully.")
 #x=cv2.imread(“encrypted_img.jpg")
     
@@ -67,11 +67,6 @@ if ch == 1:
         print("Key doesn't matched.")
 else:
     print("Thank you. EXITING.")
-   
-
-    
-    
- 
-    
-    
-    
+ # todo list
+ # Create a gui for the program.
+#images from camera should be encrypted.
